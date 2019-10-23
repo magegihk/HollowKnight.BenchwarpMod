@@ -111,6 +111,32 @@ namespace Benchwarp
             "Black"
         };
 
+        public static readonly Dictionary<string, string> cnStyles = new Dictionary<string, string>
+        {
+            ["Left"] = "左",
+            ["Right"] = "右",
+            ["Bone"] = "骨头",
+            ["Ornate"] = "华丽",
+            ["Stone"] = "石头",
+            ["Shrine"] = "神龛",
+            ["Archive"] = "档案馆",
+            ["Corpse"] = "尸体",
+            ["Mantis"] = "螳螂",
+            ["Simple"] = "简单",
+            ["Tilted"] = "斜的",
+            ["Wide"] = "宽",
+            ["Beast"] = "野兽",
+            ["Camp"] = "帐篷",
+            ["Fool"] = "愚人",
+            ["Garden"] = "花园",
+            ["Tram"] = "电车",
+            ["Mato"] = "马托",
+            ["Oro"] = "奥罗",
+            ["Sheo"] = "席奥",
+            ["White"] = "白",
+            ["Black"] = "黑"
+        };
+
         public static void GetPrefabs(Dictionary<string, Dictionary<string, GameObject>> objects)
         {
             if (objects == null) return; //happens if mod is reloaded

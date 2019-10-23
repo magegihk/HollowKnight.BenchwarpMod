@@ -53,7 +53,7 @@ namespace Benchwarp
 
         public override string GetVersion()
         {
-            return "2.0";
+            return "2.0_zh-CHS";
         }
 
         public override List<(string, string)> GetPreloadNames()

@@ -299,6 +299,11 @@ namespace Benchwarp
             get => GetBool(false);
             set => SetBool(value);
         }
+        public bool ChineseNames
+        {
+            get => GetBool(false);
+            set => SetBool(value);
+        }
         public bool EnableDeploy
         {
             get => GetBool(true);
