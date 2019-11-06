@@ -31,7 +31,7 @@ namespace Benchwarp
 
         public override string GetVersion()
         {
-            return "1.4";
+            return "1.4_zh-CHS";
         }
 
         public IEnumerator Respawn()

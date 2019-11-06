@@ -24,31 +24,31 @@ namespace Benchwarp
             int fontSize = 12;
 
             //Main buttons
-            panel.AddButton("Warp", GUIController.Instance.images["ButtonRect"], new Vector2(-154f, 40f), Vector2.zero, WarpClicked, buttonRect, GUIController.Instance.trajanBold, "Warp");
-            panel.AddButton("Settings", GUIController.Instance.images["ButtonRect"], new Vector2(1446f, 0f), Vector2.zero, SettingsClicked, buttonRect, GUIController.Instance.trajanBold, "Settings");
+            panel.AddButton("Warp", GUIController.Instance.images["ButtonRect"], new Vector2(-154f, 40f), Vector2.zero, WarpClicked, buttonRect, GUIController.Instance.trajanBold, "回城");
+            panel.AddButton("Settings", GUIController.Instance.images["ButtonRect"], new Vector2(1446f, 0f), Vector2.zero, SettingsClicked, buttonRect, GUIController.Instance.trajanBold, "设置");
             panel.AddPanel("Settings Panel", GUIController.Instance.images["DropdownBG"], new Vector2(1445f, 20f), Vector2.zero, new Rect(0, 0, GUIController.Instance.images["DropdownBG"].width, 270f));
-            panel.GetPanel("Settings Panel").AddButton("WarpOnly", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WarpOnlyClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Warp Only", fontSize);
-            panel.GetPanel("Settings Panel").AddButton("UnlockAll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, UnlockAllClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Unlock All", fontSize);
-            panel.GetPanel("Settings Panel").AddButton("ShowScene", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, ShowSceneClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Show Room Name", fontSize);
+            panel.GetPanel("Settings Panel").AddButton("WarpOnly", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WarpOnlyClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "只回城", fontSize);
+            panel.GetPanel("Settings Panel").AddButton("UnlockAll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, UnlockAllClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "全解锁", fontSize);
+            panel.GetPanel("Settings Panel").AddButton("ShowScene", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, ShowSceneClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "显示房间名", fontSize);
 
             if (Benchwarp.instance.GlobalSettings.WarpOnly) return;
 
-            panel.AddButton("All", GUIController.Instance.images["ButtonRect"], new Vector2(-154f, 0f), Vector2.zero, AllClicked, buttonRect, GUIController.Instance.trajanBold, "All");
-            panel.AddButton("Cliffs", GUIController.Instance.images["ButtonRect"], new Vector2(-54f, 0f), Vector2.zero, CliffsClicked, buttonRect, GUIController.Instance.trajanBold, "Cliffs");
-            panel.AddButton("Crossroads", GUIController.Instance.images["ButtonRect"], new Vector2(46f, 0f), Vector2.zero, CrossroadsClicked, buttonRect, GUIController.Instance.trajanBold, "Crossroads");
-            panel.AddButton("Greenpath", GUIController.Instance.images["ButtonRect"], new Vector2(146f, 0f), Vector2.zero, GreenpathClicked, buttonRect, GUIController.Instance.trajanBold, "Greenpath");
-            panel.AddButton("Canyon", GUIController.Instance.images["ButtonRect"], new Vector2(246f, 0f), Vector2.zero, CanyonClicked, buttonRect, GUIController.Instance.trajanBold, "Canyon");
-            panel.AddButton("Wastes", GUIController.Instance.images["ButtonRect"], new Vector2(346f, 0f), Vector2.zero, WastesClicked, buttonRect, GUIController.Instance.trajanBold, "Wastes");
-            panel.AddButton("City", GUIController.Instance.images["ButtonRect"], new Vector2(446f, 0f), Vector2.zero, CityClicked, buttonRect, GUIController.Instance.trajanBold, "City");
-            panel.AddButton("RoyalWaterways", GUIController.Instance.images["ButtonRect"], new Vector2(546f, 0f), Vector2.zero, RoyalWaterwaysClicked, buttonRect, GUIController.Instance.trajanBold, "Waterways");
-            panel.AddButton("Deepnest", GUIController.Instance.images["ButtonRect"], new Vector2(646f, 0f), Vector2.zero, DeepnestClicked, buttonRect, GUIController.Instance.trajanBold, "Deepnest");
-            panel.AddButton("Basin", GUIController.Instance.images["ButtonRect"], new Vector2(746f, 0f), Vector2.zero, BasinClicked, buttonRect, GUIController.Instance.trajanBold, "Basin");
-            panel.AddButton("Edge", GUIController.Instance.images["ButtonRect"], new Vector2(846f, 0f), Vector2.zero, EdgeClicked, buttonRect, GUIController.Instance.trajanBold, "Edge");
-            panel.AddButton("Peak", GUIController.Instance.images["ButtonRect"], new Vector2(946f, 0f), Vector2.zero, PeakClicked, buttonRect, GUIController.Instance.trajanBold, "Peak");
-            panel.AddButton("Grounds", GUIController.Instance.images["ButtonRect"], new Vector2(1046f, 0f), Vector2.zero, GroundsClicked, buttonRect, GUIController.Instance.trajanBold, "Grounds");
-            panel.AddButton("Gardens", GUIController.Instance.images["ButtonRect"], new Vector2(1146f, 0f), Vector2.zero, GardensClicked, buttonRect, GUIController.Instance.trajanBold, "Gardens");
-            panel.AddButton("Palace", GUIController.Instance.images["ButtonRect"], new Vector2(1246f, 0f), Vector2.zero, PalaceClicked, buttonRect, GUIController.Instance.trajanBold, "Palace");
-            panel.AddButton("Tram", GUIController.Instance.images["ButtonRect"], new Vector2(1346f, 0f), Vector2.zero, TramClicked, buttonRect, GUIController.Instance.trajanBold, "Tram");
+            panel.AddButton("All", GUIController.Instance.images["ButtonRect"], new Vector2(-154f, 0f), Vector2.zero, AllClicked, buttonRect, GUIController.Instance.trajanBold, "全部");
+            panel.AddButton("Cliffs", GUIController.Instance.images["ButtonRect"], new Vector2(-54f, 0f), Vector2.zero, CliffsClicked, buttonRect, GUIController.Instance.trajanBold, "呼啸");
+            panel.AddButton("Crossroads", GUIController.Instance.images["ButtonRect"], new Vector2(46f, 0f), Vector2.zero, CrossroadsClicked, buttonRect, GUIController.Instance.trajanBold, "十字路");
+            panel.AddButton("Greenpath", GUIController.Instance.images["ButtonRect"], new Vector2(146f, 0f), Vector2.zero, GreenpathClicked, buttonRect, GUIController.Instance.trajanBold, "苍绿");
+            panel.AddButton("Canyon", GUIController.Instance.images["ButtonRect"], new Vector2(246f, 0f), Vector2.zero, CanyonClicked, buttonRect, GUIController.Instance.trajanBold, "雾谷");
+            panel.AddButton("Wastes", GUIController.Instance.images["ButtonRect"], new Vector2(346f, 0f), Vector2.zero, WastesClicked, buttonRect, GUIController.Instance.trajanBold, "真菌");
+            panel.AddButton("City", GUIController.Instance.images["ButtonRect"], new Vector2(446f, 0f), Vector2.zero, CityClicked, buttonRect, GUIController.Instance.trajanBold, "泪城");
+            panel.AddButton("RoyalWaterways", GUIController.Instance.images["ButtonRect"], new Vector2(546f, 0f), Vector2.zero, RoyalWaterwaysClicked, buttonRect, GUIController.Instance.trajanBold, "下水道");
+            panel.AddButton("Deepnest", GUIController.Instance.images["ButtonRect"], new Vector2(646f, 0f), Vector2.zero, DeepnestClicked, buttonRect, GUIController.Instance.trajanBold, "深巢");
+            panel.AddButton("Basin", GUIController.Instance.images["ButtonRect"], new Vector2(746f, 0f), Vector2.zero, BasinClicked, buttonRect, GUIController.Instance.trajanBold, "盆地");
+            panel.AddButton("Edge", GUIController.Instance.images["ButtonRect"], new Vector2(846f, 0f), Vector2.zero, EdgeClicked, buttonRect, GUIController.Instance.trajanBold, "边境");
+            panel.AddButton("Peak", GUIController.Instance.images["ButtonRect"], new Vector2(946f, 0f), Vector2.zero, PeakClicked, buttonRect, GUIController.Instance.trajanBold, "矿山");
+            panel.AddButton("Grounds", GUIController.Instance.images["ButtonRect"], new Vector2(1046f, 0f), Vector2.zero, GroundsClicked, buttonRect, GUIController.Instance.trajanBold, "安息");
+            panel.AddButton("Gardens", GUIController.Instance.images["ButtonRect"], new Vector2(1146f, 0f), Vector2.zero, GardensClicked, buttonRect, GUIController.Instance.trajanBold, "花园");
+            panel.AddButton("Palace", GUIController.Instance.images["ButtonRect"], new Vector2(1246f, 0f), Vector2.zero, PalaceClicked, buttonRect, GUIController.Instance.trajanBold, "宫殿");
+            panel.AddButton("Tram", GUIController.Instance.images["ButtonRect"], new Vector2(1346f, 0f), Vector2.zero, TramClicked, buttonRect, GUIController.Instance.trajanBold, "电车");
 
             //Dropdown panels
             panel.AddPanel("Cliffs Panel", GUIController.Instance.images["DropdownBG"], new Vector2(-55f, 20f), Vector2.zero, new Rect(0, 0, GUIController.Instance.images["DropdownBG"].width, 270f));
@@ -68,83 +68,83 @@ namespace Benchwarp
             panel.AddPanel("Tram Panel", GUIController.Instance.images["DropdownBG"], new Vector2(1345f, 20f), Vector2.zero, new Rect(0, 0, GUIController.Instance.images["DropdownBG"].width, 270f));
 
             //Cheats panel
-            panel.GetPanel("Cliffs Panel").AddButton("KingsPass", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, KingsPassClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "King's Pass", fontSize);
-            panel.GetPanel("Cliffs Panel").AddButton("Dirtmouth", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, DirtmouthClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Dirtmouth", fontSize);
-            panel.GetPanel("Cliffs Panel").AddButton("Mato", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, MatoClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Mato", fontSize);
+            panel.GetPanel("Cliffs Panel").AddButton("KingsPass", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, KingsPassClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "国王山道", fontSize);
+            panel.GetPanel("Cliffs Panel").AddButton("Dirtmouth", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, DirtmouthClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "德特茅斯", fontSize);
+            panel.GetPanel("Cliffs Panel").AddButton("Mato", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, MatoClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "马托", fontSize);
             
             //Crossroads panel
-            panel.GetPanel("Crossroads Panel").AddButton("XRHotSprings", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, XRHotSpringsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Hot Springs", fontSize);
-            panel.GetPanel("Crossroads Panel").AddButton("XRStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, XRStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stag", fontSize);
-            panel.GetPanel("Crossroads Panel").AddButton("Salubra", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, SalubraClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Salubra", fontSize);
-            panel.GetPanel("Crossroads Panel").AddButton("AncestralMound", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, AncestralMoundClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Ancestral Mound", fontSize);
-            panel.GetPanel("Crossroads Panel").AddButton("BlackEggTemple", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, BlackEggTempleClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Black Egg Temple", fontSize);
+            panel.GetPanel("Crossroads Panel").AddButton("XRHotSprings", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, XRHotSpringsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "温泉", fontSize);
+            panel.GetPanel("Crossroads Panel").AddButton("XRStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, XRStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "车站", fontSize);
+            panel.GetPanel("Crossroads Panel").AddButton("Salubra", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, SalubraClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "红唇", fontSize);
+            panel.GetPanel("Crossroads Panel").AddButton("AncestralMound", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, AncestralMoundClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "祖先山丘", fontSize);
+            panel.GetPanel("Crossroads Panel").AddButton("BlackEggTemple", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, BlackEggTempleClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "黑卵圣殿", fontSize);
 
             //Greenpath panel
-            panel.GetPanel("Greenpath Panel").AddButton("Waterfall", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WaterfallClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Waterfall", fontSize);
-            panel.GetPanel("Greenpath Panel").AddButton("StoneSanctuary", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, StoneSanctuaryClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stone Sanctuary", fontSize);
-            panel.GetPanel("Greenpath Panel").AddButton("GPToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, GPTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Toll", fontSize);
-            panel.GetPanel("Greenpath Panel").AddButton("GPStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, GPStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stag", fontSize);
-            panel.GetPanel("Greenpath Panel").AddButton("LakeofUnn", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, LakeofUnnClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Lake of Unn", fontSize);
-            panel.GetPanel("Greenpath Panel").AddButton("Sheo", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 225f), Vector2.zero, SheoClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Sheo", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("Waterfall", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WaterfallClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "瀑布", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("StoneSanctuary", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, StoneSanctuaryClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "庇护所", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("GPToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, GPTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "收费机", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("GPStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, GPStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "车站", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("LakeofUnn", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, LakeofUnnClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "乌恩", fontSize);
+            panel.GetPanel("Greenpath Panel").AddButton("Sheo", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 225f), Vector2.zero, SheoClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "席奥", fontSize);
 
             //Canyon panel
-            panel.GetPanel("Canyon Panel").AddButton("Archives", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, TeachersArchivesClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Archives", fontSize);
+            panel.GetPanel("Canyon Panel").AddButton("Archives", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, TeachersArchivesClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "档案馆", fontSize);
 
             //Wastes panel
-            panel.GetPanel("Wastes Panel").AddButton("QueensStation", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QueensStationClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Queen's Station", fontSize);
-            panel.GetPanel("Wastes Panel").AddButton("LegEater", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, LegEaterClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Leg Eater", fontSize);
-            panel.GetPanel("Wastes Panel").AddButton("Bretta", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, BrettaClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Bretta", fontSize);
-            panel.GetPanel("Wastes Panel").AddButton("MantisVillage", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, MantisVillageClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Mantis Village", fontSize);
+            panel.GetPanel("Wastes Panel").AddButton("QueensStation", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QueensStationClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "王后驿站", fontSize);
+            panel.GetPanel("Wastes Panel").AddButton("LegEater", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, LegEaterClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "食腿者", fontSize);
+            panel.GetPanel("Wastes Panel").AddButton("Bretta", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, BrettaClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "迷妹", fontSize);
+            panel.GetPanel("Wastes Panel").AddButton("MantisVillage", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, MantisVillageClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "螳螂村", fontSize);
 
             //City panel
-            panel.GetPanel("City Panel").AddButton("Quirrel", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QuirrelClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Quirrel", fontSize);
-            panel.GetPanel("City Panel").AddButton("CoTToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CoTTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Toll", fontSize);
-            panel.GetPanel("City Panel").AddButton("CityStorerooms", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, CityStoreroomsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "City Storerooms", fontSize);
-            panel.GetPanel("City Panel").AddButton("WatchersSpire", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, WatchersSpireClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Watcher's Spire", fontSize);
-            panel.GetPanel("City Panel").AddButton("KingsStation", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, KingsStationClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "King's Station", fontSize);
-            panel.GetPanel("City Panel").AddButton("PleasureHouse", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 225f), Vector2.zero, PleasureHouseClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Pleasure House", fontSize);
+            panel.GetPanel("City Panel").AddButton("Quirrel", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QuirrelClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "奎若", fontSize);
+            panel.GetPanel("City Panel").AddButton("CoTToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CoTTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "收费机", fontSize);
+            panel.GetPanel("City Panel").AddButton("CityStorerooms", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, CityStoreroomsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "城市仓库", fontSize);
+            panel.GetPanel("City Panel").AddButton("WatchersSpire", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, WatchersSpireClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "守望者高塔", fontSize);
+            panel.GetPanel("City Panel").AddButton("KingsStation", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 185f), Vector2.zero, KingsStationClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "国王驿站", fontSize);
+            panel.GetPanel("City Panel").AddButton("PleasureHouse", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 225f), Vector2.zero, PleasureHouseClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "欢乐之屋", fontSize);
 
             //Waterways panel
-            panel.GetPanel("Waterways Panel").AddButton("Waterways", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WaterwaysClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Waterways", fontSize);
-            panel.GetPanel("Waterways Panel").AddButton("Godhome", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, GodhomeClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Godhome", fontSize);
-            panel.GetPanel("Waterways Panel").AddButton("HallofGods", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, HallofGodsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Hall of Gods", fontSize);
+            panel.GetPanel("Waterways Panel").AddButton("Waterways", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WaterwaysClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "下水道", fontSize);
+            panel.GetPanel("Waterways Panel").AddButton("Godhome", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, GodhomeClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "神居", fontSize);
+            panel.GetPanel("Waterways Panel").AddButton("HallofGods", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, HallofGodsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "手办屋", fontSize);
 
             //Deepnest panel
-            panel.GetPanel("Deepnest Panel").AddButton("DNHotSprings", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, DNHotSpringsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Hot Springs", fontSize);
-            panel.GetPanel("Deepnest Panel").AddButton("FailedTramway", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, FailedTramwayClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Failed Tramway", fontSize);
-            panel.GetPanel("Deepnest Panel").AddButton("BeastsDen", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, BeastsDenClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Beast's Den", fontSize);
+            panel.GetPanel("Deepnest Panel").AddButton("DNHotSprings", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, DNHotSpringsClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "温泉", fontSize);
+            panel.GetPanel("Deepnest Panel").AddButton("FailedTramway", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, FailedTramwayClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "废弃车站", fontSize);
+            panel.GetPanel("Deepnest Panel").AddButton("BeastsDen", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, BeastsDenClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "野兽巢穴", fontSize);
 
             //Basin panel
-            panel.GetPanel("Basin Panel").AddButton("ABToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, ABTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Toll", fontSize);
-            panel.GetPanel("Basin Panel").AddButton("ABStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, ABStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stag", fontSize);
+            panel.GetPanel("Basin Panel").AddButton("ABToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, ABTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "收费机", fontSize);
+            panel.GetPanel("Basin Panel").AddButton("ABStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, ABStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "车站", fontSize);
 
             //Edge panel
-            panel.GetPanel("Edge Panel").AddButton("Oro", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, OroClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Oro", fontSize);
-            panel.GetPanel("Edge Panel").AddButton("Camp", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CampClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Camp", fontSize);
-            panel.GetPanel("Edge Panel").AddButton("Colosseum", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, ColosseumClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Colosseum", fontSize);
-            panel.GetPanel("Edge Panel").AddButton("Hive", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, HiveClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Hive", fontSize);
+            panel.GetPanel("Edge Panel").AddButton("Oro", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, OroClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "奥罗", fontSize);
+            panel.GetPanel("Edge Panel").AddButton("Camp", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CampClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "营地", fontSize);
+            panel.GetPanel("Edge Panel").AddButton("Colosseum", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, ColosseumClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "愚人竞技场", fontSize);
+            panel.GetPanel("Edge Panel").AddButton("Hive", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 145f), Vector2.zero, HiveClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "蜂巢", fontSize);
 
             //Peak panel
-            panel.GetPanel("Peak Panel").AddButton("DarkRoom", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, DarkRoomClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Dark Room", fontSize);
-            panel.GetPanel("Peak Panel").AddButton("CrystalGuardian", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CrystalGuardianClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Crystal Guardian", fontSize);
+            panel.GetPanel("Peak Panel").AddButton("DarkRoom", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, DarkRoomClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "暗室", fontSize);
+            panel.GetPanel("Peak Panel").AddButton("CrystalGuardian", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, CrystalGuardianClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "水晶守卫", fontSize);
 
             //Grounds panel
-            panel.GetPanel("Grounds Panel").AddButton("RGStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, RGStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stag", fontSize);
-            panel.GetPanel("Grounds Panel").AddButton("GreyMourner", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, GreyMournerClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Grey Mourner", fontSize);
+            panel.GetPanel("Grounds Panel").AddButton("RGStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, RGStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "车站", fontSize);
+            panel.GetPanel("Grounds Panel").AddButton("GreyMourner", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, GreyMournerClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "灰色哀悼者", fontSize);
 
             //Gardens panel
-            panel.GetPanel("Gardens Panel").AddButton("QGCornifer", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QGCorniferClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Cornifer", fontSize);
-            panel.GetPanel("Gardens Panel").AddButton("QGToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, QGTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Toll", fontSize);
-            panel.GetPanel("Gardens Panel").AddButton("QGStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, QGStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Stag", fontSize);
+            panel.GetPanel("Gardens Panel").AddButton("QGCornifer", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, QGCorniferClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "绘图师", fontSize);
+            panel.GetPanel("Gardens Panel").AddButton("QGToll", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, QGTollClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "收费机", fontSize);
+            panel.GetPanel("Gardens Panel").AddButton("QGStag", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, QGStagClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "车站", fontSize);
 
             //Palace panel
-            panel.GetPanel("Palace Panel").AddButton("WPEntrance", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WPEntranceClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Entrance", fontSize);
-            panel.GetPanel("Palace Panel").AddButton("WPAtrium", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, WPAtriumClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Atrium", fontSize);
-            panel.GetPanel("Palace Panel").AddButton("WPBalcony", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, WPBalconyClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Balcony", fontSize);
+            panel.GetPanel("Palace Panel").AddButton("WPEntrance", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, WPEntranceClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "入口", fontSize);
+            panel.GetPanel("Palace Panel").AddButton("WPAtrium", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, WPAtriumClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "中庭", fontSize);
+            panel.GetPanel("Palace Panel").AddButton("WPBalcony", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 105f), Vector2.zero, WPBalconyClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "阳台", fontSize);
 
             //Tram panel
-            panel.GetPanel("Tram Panel").AddButton("UpperTram", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, UpperTramClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Upper Tram", fontSize);
-            panel.GetPanel("Tram Panel").AddButton("LowerTram", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, LowerTramClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "Lower Tram", fontSize);
+            panel.GetPanel("Tram Panel").AddButton("UpperTram", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 25f), Vector2.zero, UpperTramClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "上电车", fontSize);
+            panel.GetPanel("Tram Panel").AddButton("LowerTram", GUIController.Instance.images["ButtonRectEmpty"], new Vector2(5f, 65f), Vector2.zero, LowerTramClicked, new Rect(0f, 0f, 80f, 40f), GUIController.Instance.trajanNormal, "下电车", fontSize);
 
             panel.FixRenderOrder();
         }

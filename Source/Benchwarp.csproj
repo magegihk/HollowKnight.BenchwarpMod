@@ -267,19 +267,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>rem "If Distribution exists, delete it"
-rd /q /s "$(ProjectDir)Distribution\" 2&gt;nul
-del "$(ProjectDir)$(ProjectName).zip" 2&gt;nul</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>rem "Create the folder structure prefered by mods"
-md "$(ProjectDir)Distribution\hollow_knight_Data\Managed\Mods"
-rem "Copy the Mod's dll into tthe Mods folder"
-copy "$(ProjectDir)$(OutputPath)\$(ProjectName).dll" "$(ProjectDir)Distribution\hollow_knight_Data\Managed\Mods\$(ProjectName).dll"
-rem "Copy the readme into the Distribution folder"
-copy "$(ProjectDir)\readme.md" "$(ProjectDir)Distribution\readme.$(ProjectName).md"
-rem "Zip the Distribution Folder"
-powershell.exe -nologo -noprofile -command "&amp; { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('$(ProjectDir)Distribution', '$(ProjectDir)$(ProjectName).zip'); }"
-</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "D:\SteamLibrary\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods"</PostBuildEvent>
   </PropertyGroup>
 </Project>
