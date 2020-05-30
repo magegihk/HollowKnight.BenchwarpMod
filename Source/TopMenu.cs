@@ -19,34 +19,34 @@ namespace Benchwarp
 
         private static readonly Type t = typeof(GlobalSettings);
 
-        private static readonly Dictionary<string, (string, UnityAction<string>, PropertyInfo)[]> Panels =
-            new Dictionary<string, (string, UnityAction<string>, PropertyInfo)[]>
+        private static readonly Dictionary<string, (string, UnityAction<string>, PropertyInfo, string)[]> Panels =
+            new Dictionary<string, (string, UnityAction<string>, PropertyInfo, string)[]>
             {
-                ["Options"] = new (string, UnityAction<string>, PropertyInfo)[]
+                ["Options"] = new (string, UnityAction<string>, PropertyInfo, string)[]
                 {
-                    ("Cooldown", CooldownClicked, t.GetProperty(nameof(GlobalSettings.DeployCooldown))),
-                    ("Noninteractive", NoninteractiveClicked, t.GetProperty(nameof(GlobalSettings.Noninteractive))),
-                    ("No Mid-Air Deploy", NoMidAirDeployClicked, t.GetProperty(nameof(GlobalSettings.NoMidAirDeploy))),
-                    ("Blacklist", BlacklistClicked, t.GetProperty(nameof(GlobalSettings.BlacklistRooms))),
-                    ("Reduce Preload", ReducePreloadClicked, t.GetProperty(nameof(GlobalSettings.ReducePreload)))
+                    ("Cooldown", CooldownClicked, t.GetProperty(nameof(GlobalSettings.DeployCooldown)), "冷却"),
+                    ("Noninteractive", NoninteractiveClicked, t.GetProperty(nameof(GlobalSettings.Noninteractive)), "非交互"),
+                    ("No Mid-Air Deploy", NoMidAirDeployClicked, t.GetProperty(nameof(GlobalSettings.NoMidAirDeploy)), "禁空中部署"),
+                    ("Blacklist", BlacklistClicked, t.GetProperty(nameof(GlobalSettings.BlacklistRooms)), "黑名单"),
+                    ("Reduce Preload", ReducePreloadClicked, t.GetProperty(nameof(GlobalSettings.ReducePreload)), "减少预加载")
                 },
 
-                ["Settings"] = new (string, UnityAction<string>, PropertyInfo)[]
+                ["Settings"] = new (string, UnityAction<string>, PropertyInfo, string)[]
                 {
-                    ("Warp Only", WarpOnlyClicked, t.GetProperty(nameof(GlobalSettings.WarpOnly))),
-                    ("Unlock All", UnlockAllClicked, t.GetProperty(nameof(GlobalSettings.UnlockAllBenches))),
-                    ("Show Room Name", ShowSceneClicked, t.GetProperty(nameof(GlobalSettings.ShowScene))),
-                    ("Use Room Names", SwapNamesClicked, t.GetProperty(nameof(GlobalSettings.SwapNames))),
-                    ("Enable Deploy", EnableDeployClicked, t.GetProperty(nameof(GlobalSettings.EnableDeploy))),
-                    ("Always Toggle All", AlwaysToggleAllClicked, t.GetProperty(nameof(GlobalSettings.AlwaysToggleAll)))
+                    ("Warp Only", WarpOnlyClicked, t.GetProperty(nameof(GlobalSettings.WarpOnly)), "只回城"),
+                    ("Unlock All", UnlockAllClicked, t.GetProperty(nameof(GlobalSettings.UnlockAllBenches)), "全解锁"),
+                    ("Show Room Name", ShowSceneClicked, t.GetProperty(nameof(GlobalSettings.ShowScene)), "显示房间名"),
+                    ("汉化", TranslateClicked, t.GetProperty(nameof(GlobalSettings.ChineseNames)), "English"),
+                    ("Use Room Names", SwapNamesClicked, t.GetProperty(nameof(GlobalSettings.SwapNames)), "使用房间名"),
+                    ("Enable Deploy", EnableDeployClicked, t.GetProperty(nameof(GlobalSettings.EnableDeploy)), "开启部署")
                 }
             };
 
-        private static readonly Dictionary<string, (UnityAction<string>, Vector2)> Buttons = new Dictionary<string, (UnityAction<string>, Vector2)>
+        private static readonly Dictionary<string, (UnityAction<string>, Vector2, string)> Buttons = new Dictionary<string, (UnityAction<string>, Vector2, string)>
         {
-            ["Deploy"] = (DeployClicked, new Vector2(-154f, 300f)),
-            ["Set"] = (SetClicked, new Vector2(-54f, 300f)),
-            ["Destroy"] = (s => BenchMaker.DestroyBench(), new Vector2(46f, 300f)),
+            ["Deploy"] = (DeployClicked, new Vector2(-154f, 300f), "部署"),
+            ["Set"] = (SetClicked, new Vector2(-54f, 300f), "设置"),
+            ["Destroy"] = (s => BenchMaker.DestroyBench(), new Vector2(46f, 300f), "摧毁")
         };
 
         private static readonly Dictionary<string, (UnityAction<string>, Vector2)> RandomizerButtons = new Dictionary<string, (UnityAction<string>, Vector2)>
@@ -85,7 +85,7 @@ namespace Benchwarp
                 );
             }
 
-            CanvasPanel MakePanel(string name, Vector2 position)
+            CanvasPanel MakePanel(string name, Vector2 position, string cnName)
             {
                 CanvasPanel newPanel = rootPanel.AddPanel
                 (
@@ -104,7 +104,7 @@ namespace Benchwarp
                     s => rootPanel.TogglePanel(name),
                     buttonRect,
                     GUIController.Instance.TrajanBold,
-                    name
+                    !Benchwarp.instance.GlobalSettings.ChineseNames ? name : cnName
                 );
 
                 return newPanel;
@@ -120,12 +120,12 @@ namespace Benchwarp
                 WarpClicked,
                 buttonRect,
                 GUIController.Instance.TrajanBold,
-                "Warp"
+                !Benchwarp.instance.GlobalSettings.ChineseNames ? "Warp" : "回城"
             );
 
             if (Benchwarp.instance.GlobalSettings.EnableDeploy)
             {
-                foreach (KeyValuePair<string, (UnityAction<string>, Vector2)> pair in Buttons)
+                foreach (KeyValuePair<string, (UnityAction<string>, Vector2, string)> pair in Buttons)
                 {
                     rootPanel.AddButton
                     (
@@ -136,51 +136,53 @@ namespace Benchwarp
                         pair.Value.Item1,
                         buttonRect,
                         GUIController.Instance.TrajanBold,
-                        pair.Key,
+                        !Benchwarp.instance.GlobalSettings.ChineseNames ? pair.Key : pair.Value.Item3,
                         fontSize: 11
                     );
                 }
 
-                CanvasPanel style = MakePanel("Style", new Vector2(145f, 320f));
+                CanvasPanel style = MakePanel("Style", new Vector2(145f, 320f), "样式");
 
                 Vector2 position = new Vector2(5f, 25f);
 
-                foreach (string styleName in BenchMaker.Styles)
+                foreach ((string, string) styleName in BenchMaker.Styles)
                 {
-                    AddButton(style, styleName, StyleChanged, position);
+                    AddButton(style, styleName.Item1, StyleChanged, position, !Benchwarp.instance.GlobalSettings.ChineseNames ? styleName.Item1 : styleName.Item2);
 
                     position += new Vector2(0f, 30f);
                 }
 
-                CanvasPanel options = MakePanel("Options", new Vector2(245f, 320f));
+                CanvasPanel options = MakePanel("Options", new Vector2(245f, 320f), "选项");
 
                 for (int i = 0; i < Panels["Options"].Length; i++)
                 {
-                    (string name, UnityAction<string> action, PropertyInfo _) = Panels["Options"][i];
+                    (string name, UnityAction<string> action, PropertyInfo _, string cnName) = Panels["Options"][i];
 
                     AddButton
                     (
                         options,
                         name,
                         action,
-                        new Vector2(5f, 25 + i * 40)
+                        new Vector2(5f, 25 + i * 40),
+                        !Benchwarp.instance.GlobalSettings.ChineseNames ? name : cnName
                     );
                 }
             }
 
 
-            CanvasPanel settings = MakePanel("Settings", new Vector2(1445f, 20f));
+            CanvasPanel settings = MakePanel("Settings", new Vector2(1445f, 20f), "设置");
 
             for (int i = 0; i < Panels["Settings"].Length; i++)
             {
-                (string name, UnityAction<string> action, PropertyInfo _) = Panels["Settings"][i];
+                (string name, UnityAction<string> action, PropertyInfo _, string cnName) = Panels["Settings"][i];
 
                 AddButton
                 (
                     settings,
                     name,
                     action,
-                    new Vector2(5f, 25 + i * 40)
+                    new Vector2(5f, 25 + i * 40),
+                    !Benchwarp.instance.GlobalSettings.ChineseNames ? name : cnName
                 );
             }
 
@@ -216,7 +218,7 @@ namespace Benchwarp
                     benchPanels.Add(bench.areaName);
                     panelDistance += new Vector2(100f, 0f);
                     panelButtonHeight[bench.areaName] = new Vector2(5f, 25f);
-                    MakePanel(bench.areaName, panelDistance);
+                    MakePanel(bench.areaName, panelDistance, bench.cnAreaName);
                 }
                 else
                 {
@@ -233,7 +235,7 @@ namespace Benchwarp
                              (string s) => bench.SetBench(),
                              new Rect(0f, 0f, 80f, 40f),
                              GUIController.Instance.TrajanNormal,
-                             !Benchwarp.instance.GlobalSettings.SwapNames ? bench.name : bench.sceneName,
+                             !Benchwarp.instance.GlobalSettings.SwapNames ? (!Benchwarp.instance.GlobalSettings.ChineseNames ? bench.name : bench.cnName) : bench.sceneName,
                              fontSize
                          );
             }
@@ -247,7 +249,7 @@ namespace Benchwarp
                 AllClicked,
                 buttonRect,
                 GUIController.Instance.TrajanBold,
-                "All"
+                !Benchwarp.instance.GlobalSettings.ChineseNames ? "All" : "全部"
             );
 
             rootPanel.FixRenderOrder();
@@ -320,9 +322,9 @@ namespace Benchwarp
 
                 if (rootPanel.GetPanel("Style").active)
                 {
-                    foreach (string style in BenchMaker.Styles)
+                    foreach ((string, string) style in BenchMaker.Styles)
                     {
-                        rootPanel.GetButton(style, "Style").SetTextColor(gs.benchStyle == style ? Color.yellow : Color.white);
+                        rootPanel.GetButton(style.Item1, "Style").SetTextColor(gs.benchStyle == style.Item1 ? Color.yellow : Color.white);
                     }
                 }
 
@@ -518,7 +520,14 @@ namespace Benchwarp
             Benchwarp.instance.GlobalSettings.ShowScene = !Benchwarp.instance.GlobalSettings.ShowScene;
             Benchwarp.instance.SaveGlobalSettings();
         }
-
+        private static void TranslateClicked(string buttonName)
+        {
+            Benchwarp.instance.GlobalSettings.ChineseNames = !Benchwarp.instance.GlobalSettings.ChineseNames;
+            Benchwarp.instance.SaveGlobalSettings();
+            rootPanel.Destroy();
+            sceneNamePanel.Destroy();
+            BuildMenu(canvas);
+        }
         private static void SwapNamesClicked(string buttonName)
         {
             Benchwarp.instance.GlobalSettings.SwapNames = !Benchwarp.instance.GlobalSettings.SwapNames;

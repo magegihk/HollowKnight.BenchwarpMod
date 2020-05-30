@@ -97,30 +97,30 @@ namespace Benchwarp
         private static GameObject PreloadedSprite => GameObject.Instantiate(_preloadedSprite);
 
 
-        public static readonly List<string> Styles = new List<string>
+        public static readonly List<(string, string)> Styles = new List<(string, string)>
         {
-            "Left",
-            "Right",
-            "Bone",
-            "Ornate",
-            "Stone",
-            "Shrine",
-            "Archive",
-            "Corpse",
-            "Mantis",
-            "Simple",
-            "Tilted",
-            "Wide",
-            "Beast",
-            "Camp",
-            "Fool",
-            "Garden",
-            "Tram",
-            "Mato",
-            "Oro",
-            "Sheo",
-            "White",
-            "Black"
+            ("Left", "左"),
+            ("Right", "右"),
+            ("Bone", "骨"),
+            ("Ornate", "华丽"),
+            ("Stone", "石"),
+            ("Shrine", "神龛"),
+            ("Archive", "档案馆"),
+            ("Corpse", "尸体"),
+            ("Mantis", "螳螂"),
+            ("Simple", "简单"),
+            ("Tilted", "斜"),
+            ("Wide", "宽"),
+            ("Beast", "野兽"),
+            ("Camp", "营地"),
+            ("Fool", "愚人"),
+            ("Garden", "花园"),
+            ("Tram", "电车"),
+            ("Mato", "马托"),
+            ("Oro", "奥罗"),
+            ("Sheo", "席奥"),
+            ("White", "白"),
+            ("Black", "黑")
         };
 
         public static void GetPrefabs(Dictionary<string, Dictionary<string, GameObject>> objects)
